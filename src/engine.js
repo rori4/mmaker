@@ -123,9 +123,9 @@ module.exports = class Engine {
   async tickInfo () {
     try {
       // Load the price info
-      const orderbook = await this.exchange.fetchOrderBook(this.market)
-      this.bid = orderbook.bids.length ? orderbook.bids[0][0] : false
-      this.ask = orderbook.asks.length ? orderbook.asks[0][0] : false
+      const orderBook = await this.exchange.fetchOrderBook(this.market)
+      this.bid = orderBook.bids.length ? orderBook.bids[0][0] : false
+      this.ask = orderBook.asks.length ? orderBook.asks[0][0] : false
       this.fair = (this.bid + this.ask) / 2
       this.spread = (this.bid && this.ask) ? this.ask - this.bid : false
       this.spreadPercent = this.spread / this.bid
