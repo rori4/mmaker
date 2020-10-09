@@ -356,6 +356,7 @@ module.exports = class Engine {
             }
           }
 
+          // TODO: bulk ordering
           for (let i = 0, len = orders.length; i < len; i++) {
             try {
               await this.exchange.createOrder(orders[i].symbol, orders[i].type, orders[i].side, orders[i].amount, orders[i].price)
